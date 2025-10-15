@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Isming — Portfolio</title>
+  <style>
+    :root{
+      --bg:#f6f9fc; --card:#ffffff; --accent:#0ea5a4; --text:#0f1724;
+      --muted:#64748b;
+      --glass: rgba(255,255,255,0.6);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, Arial;background:linear-gradient(180deg,#eef2f6 0%, #f8fafc 100%);color:var(--text)}
+    .container{max-width:980px;margin:32px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:20px}
+    nav a{margin-left:12px;color:var(--muted);text-decoration:none;font-weight:600}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(12,18,30,0.06);margin-bottom:16px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:16px}
+    .intro p{color:var(--muted);margin-top:8px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .skill{background:#eef7f7;padding:8px 10px;border-radius:999px;font-weight:600;color:#065f60;font-size:13px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .project{padding:12px;border-radius:10px;border:1px solid rgba(10,20,30,0.04);background:linear-gradient(180deg,#ffffff,#fcffff)}
+    footer{margin-top:16px;color:var(--muted);font-size:13px;text-align:center}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:700}
+    /* responsive */
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} nav a{display:none} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar" id="avatar">M</div>
+        <div>
+          <h1 id="name">Isming Familiyang</h1>
+          <div style="color:var(--muted);font-size:13px">Veb dasturchi / Dizayner / Student</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <section>
+        <div class="card intro">
+          <h2>Salom! Men — <span id="introName">Ism</span>.</h2>
+          <p>Men veb-dasturlashni o'rganadigan 15 yoshli talaba. Bu mening portfolio saytim — unda loyihalarim, ko'nikmalarim va kontaktlarim mavjud.</p>
+
+          <div style="margin-top:12px">
+            <div class="muted small" style="color:var(--muted);font-size:13px">Ko'nikmalar</div>
+            <div class="skills">
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">JavaScript</div>
+              <div class="skill">React (o'rganilyapti)</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <a class="btn" href="#projects">Mening loyihalarim</a>
+            <a class="btn" style="background:#94a3b8;margin-left:8px" href="#contact">Aloqa</a>
+          </div>
+        </div>
+
+        <div id="projects" class="card">
+          <h3>Projects</h3>
+          <div class="projects">
+            <div class="project">
+              <h4>Safe Slot (o'yin)</h4>
+              <p style="color:var(--muted);font-size:13px">Ta'limiy slot o'yin — HTML/CSS/JS yordamida.</p>
+              <p style="margin-top:8px"><strong>Texnologiya:</strong> JavaScript</p>
+            </div>
+            <div class="project">
+              <h4>Foto galereya</h4>
+              <p style="color:var(--muted);font-size:13px">Oddiy responsive galereya.</p>
+              <p style="margin-top:8px"><strong>Texnologiya:</strong> HTML, CSS</p>
+            </div>
+            <div class="project">
+              <h4>Blog</h4>
+              <p style="color:var(--muted);font-size:13px">Markdown asosida statik blog.</p>
+              <p style="margin-top:8px"><strong>Texnologiya:</strong> Netlify + static</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Tez ma'lumot</h3>
+          <p style="color:var(--muted);font-size:14px">Yosh: <span id="age">15</span></p>
+          <p style="color:var(--muted);font-size:14px">Shahar: <span id="city">Namangan</span></p>
+          <div style="margin-top:12px">
+            <a class="btn" href="#contact">Murojaat qil</a>
+          </div>
+        </div>
+
+        <div id="contact" class="card" style="margin-top:12px">
+          <h3>Aloqa</h3>
+          <p style="color:var(--muted);font-size:13px">E-pochta yoki Telegram orqali bog'laning.</p>
+          <form id="contactForm" onsubmit="return false;" style="margin-top:8px">
+            <input id="email" placeholder="email@mail.com" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6eef6" />
+            <button id="sendBtn" class="btn" style="margin-top:8px">Xabar jo'nat</button>
+            <div id="sentMsg" style="margin-top:8px;color:var(--muted);font-size:13px;display:none">Xabar jo'natildi (test).</div>
+          </form>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Isming Familiyang — Barcha huquqlar saqlangan.
+    </footer>
+  </div>
+
+  <script>
+    // Oddiy kichik interaktivlik
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('sendBtn').addEventListener('click', () => {
+      const email = document.getElementById('email').value.trim();
+      if(!email.includes('@')) {
+        alert('Iltimos, yaroqli email kiriting.');
+        return;
+      }
+      document.getElementById('sentMsg').style.display = 'block';
+      setTimeout(()=>{ document.getElementById('sentMsg').style.display = 'none'; document.getElementById('email').value=''; }, 1800);
+    });
+
+    // Sahifani o'zingizga moslashtirish uchun bir nechta helperlar:
+    // document.getElementById('name').textContent = 'SENING ISMING';
+    // document.getElementById('introName').textContent = 'SENING ISMING';
+    // document.getElementById('age').textContent = 'SENING YOSHING';
+    // document.getElementById('city').textContent = 'SENING SHAHARING';
+    // document.getElementById('avatar').textContent = 'S'; // isming birinchi harfi
+  </script>
+</body>
+</html>
